@@ -1,0 +1,37 @@
+# -----------------
+#  Project info
+# -----------------
+project_name:
+  type: str
+  help: Project name
+  default: Python ML Template
+
+github_repo_url:
+  type: str
+  help: Where should your project be hosted on GitHub? (URL)
+  default: https://github.com/bellanich/python-ml-template
+
+# -----------------
+#  Contact details
+# -----------------
+author:
+  type: str
+  help: Project creator
+  default: Bella Nicholson
+
+linkedin_profile_link:
+  type: str
+  help: LinkedIn Profile URL
+  default: https://www.linkedin.com/in/bella-nicholson/
+
+linkedin_handle:
+  type: str
+  help: Text to display as your LinkedIn "handle"
+  default: "@bella-nicholson"
+
+# WARNING - If you make your project repository public, then anyone will
+#           be able to contact the provided email.
+email:
+  type: str
+  help: Email address for (public) contact details
+  default: bellanich.software@gmail.com

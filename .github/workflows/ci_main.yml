@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - "**.py"
+      - ".github/workflows/ci_main.yml"
+
+env:
+  PYTHONPATH: .
+
+jobs:
+  merge-check:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Set env vars
+      run: |
+        echo "CONDA_BASE=$(conda info --base)" >> $GITHUB_ENV
+        echo "BRANCH_NAME=$(echo "$GITHUB_REF" | sed 's|^refs/heads/||')" >> $GITHUB_ENV
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: "${{ env.BRANCH_NAME }}"
+
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        environment-file: environment.yml
+
+    - name: Run tests status check
+      run: |
+        source $CONDA_BASE/etc/profile.d/conda.sh
+        conda activate test
+        pytest tests
