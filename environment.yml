@@ -5,8 +5,7 @@ channels:
 dependencies:
   - python
   - ipython
-  - black
-  - flake8
+  - ruff
   - isort
   - pre-commit
   - pytest
