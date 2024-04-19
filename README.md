@@ -116,7 +116,6 @@ This project leverages the power of the following frameworks and libraries. Refe
 
 * [![Static Badge][copier-badge-url]][copier-website]
 * [![Static Badge][pre-commit-badge-url]][pre-commit-website]
-* [![Static Badge][commitlint-badge-url]][commitlint-website]
 * [![Static Badge][conda-badge-url]][conda-website]
 * [![Static Badge][pytest-badge-url]][pytest-website]
 * [![Static Badge][github-actions-badge-url]][github-actions-website]
@@ -231,6 +230,7 @@ Rather than re-inventing the wheel, I've leveraged the following great resources
 * [Guide to making custom language badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)
 * [Simple Icons's library of open source project logos](https://simpleicons.org/)
 * [Python's Official Logging Cookbook by Vinay Sajip](https://docs.python.org/3/howto/logging-cookbook.html)
+* [Conventional Commit Regex by marcojahn](https://gist.github.com/marcojahn/482410b728c31b221b70ea6d2c433f0c)
 
 <!-- * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
@@ -269,9 +269,7 @@ Rather than re-inventing the wheel, I've leveraged the following great resources
 <!-- Badges for tooling and frameworks  -->
 [pre-commit-badge-url]: https://img.shields.io/badge/-React%2520Router?style=for-the-badge&logo=precommit&logoColor=%23FAB040&label=precommit&color=gray&link=https%3A%2F%2Fpre-commit.com
 [pre-commit-website]: https://pre-commit.com
-[commitlint-badge-url]: https://img.shields.io/badge/-React%2520Router?style=for-the-badge&logo=commitlint&label=commitlint&labelColor=%23000000&color=%23000000&link=https%3A%2F%2Fcommitlint.js.org%2F%23%2F
-[commitlint-website]: https://commitlint.js.org/#/
-[copier-badge-url]: https://img.shields.io/badge/-React%2520Router?style=for-the-badge&logo=python&logoColor=orange&label=copier&labelColor=white&color=white&link=https%3A%2F%2Fcommitlint.js.org%2F%23%2F
+[copier-badge-url]: https://img.shields.io/badge/-React%2520Router?style=for-the-badge&logo=python&logoColor=orange&label=copier&labelColor=white&color=white&link=https%3A%2F%2F.js.org%2F%23%2F
 [copier-website]: https://copier.readthedocs.io/en/stable/
 [pytest-badge-url]: https://img.shields.io/badge/-ReactJS%2520?style=for-the-badge&logo=pytest&logoColor=%230A9EDC&label=PyTest&labelColor=gray&color=gray
 [pytest-website]: https://docs.pytest.org/en/7.4.x/contents.html
