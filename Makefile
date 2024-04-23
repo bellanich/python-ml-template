@@ -42,8 +42,6 @@ build_hooks:
 	fi && \
 	conda install pre-commit && \
 	pre-commit install && .git/hooks/pre-commit && \
-	npm install -g @commitlint/cli @commitlint/config-conventional && \
-	npm fund && \
 	chmod +x config/commitlint.sh
 
 # Target to clean up generated files
