@@ -25,8 +25,8 @@ build_conda:
 build_hooks:
 	@echo ""
 	@echo "Setting up pre-commit hooks..."
-	@export PATH="${CONDA_PREFIX}:${PATH}" && \
-	export PATH="${CONDA_PREFIX}/envs/${DIR_NAME}/bin:${PATH}" && \
+	source ~/.zshrc && \
+	conda activate ${DIR_NAME} && \
 	CONDA_ENV_NAME=$$(which python | awk -F/ '{print $$(NF-2)}') && \
 	if [ "$${CONDA_ENV_NAME}" = "${DIR_NAME}" ]; then \
 		echo "✓ Check passed: Correct conda env is in use"; \
