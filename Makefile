@@ -1,3 +1,8 @@
+# --------------------
+#  Preview
+# --------------------
+# This file is a preview of the Makefile template (`Makefile.jinja`) output
+
 # Environment variables
 DIR_NAME := $(shell basename "$(PWD)")
 
@@ -64,11 +69,11 @@ gh_repo_setup:
 	@if ! gh repo view "${DIR_NAME}" >/dev/null 2>&1; then \
       echo "Creating project on GitHub..."; \
 	  gh repo create "${DIR_NAME}" --private; \
-	  git remote add origin {{ github_repo_url }}; \
+	  git remote add origin https://github.com/bellanich/python-ml-template; \
 	  git push -u origin main; \
 	else \
       echo "Repository called '${DIR_NAME}' already exists on GitHub...skipping..."; \
-	  git remote add origin {{ github_repo_url }} 2> /dev/null || true; \
+	  git remote add origin https://github.com/bellanich/python-ml-template 2> /dev/null || true; \
 	  git push; \
     fi; \
 	echo "Done"
