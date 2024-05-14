@@ -167,8 +167,7 @@ Getting started is simple. Here are the step-by-step instructions:
 Curious how my Python ML Template works? This GIF showcases how you can get started right away with ML feature development by using this template's 3 simple setup commands:
 
 <div align="center">
-<!--  width="400" height="600" -->
-<img src="images/demo.gif" alt="Logo">
+<img src="images/demo.gif" alt="Demo">
 </div>
 
 <br/>
@@ -234,6 +233,7 @@ Rather than re-inventing the wheel, I've leveraged the following great resources
 * [Collection of Git Attribute Templates](https://github.com/gitattributes/gitattributes) [by gitattributes](https://github.com/orgs/gitattributes/people)
 * [Shields.io Static Badge Builder](https://shields.io/badges/static-badge)
 * [Guide to making custom language badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)
+* [Terminalizer by Mohammad Anas Fares for terminal session recording](https://www.terminalizer.com)
 * [Simple Icons's library of open source project logos](https://simpleicons.org/)
 * [Python's Official Logging Cookbook by Vinay Sajip](https://docs.python.org/3/howto/logging-cookbook.html)
 * [Conventional Commit Regex by marcojahn](https://gist.github.com/marcojahn/482410b728c31b221b70ea6d2c433f0c)
