@@ -38,7 +38,7 @@
     <a href="https://github.com/bellanich/python-ml-template/tree/main/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/bellanich/python-ml-template">View Demo</a>
+    <a href="#usage">View Demo</a>
     ·
     <a href="https://github.com/bellanich/python-ml-template/issues">Report Bug</a>
     ·
