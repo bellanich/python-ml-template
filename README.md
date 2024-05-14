@@ -167,7 +167,8 @@ Getting started is simple. Here are the step-by-step instructions:
 Curious how my Python ML Template works? This GIF showcases how you can get started right away with ML feature development by using this template's 3 simple setup commands:
 
 <div align="center">
-<img src="images/demo.gif" alt="Logo" width="600" height="600">
+<!--  width="400" height="600" -->
+<img src="images/demo.gif" alt="Logo">
 </div>
 
 <br/>
