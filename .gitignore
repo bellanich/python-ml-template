@@ -159,11 +159,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-
-# Ignore Husky files
-.husky/_
-node_modules/
-package-lock.json
-
 # iOS code artifacts
 .DS_Store

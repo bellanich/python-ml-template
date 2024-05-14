@@ -38,7 +38,7 @@
     <a href="https://github.com/bellanich/python-ml-template/tree/main/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/bellanich/python-ml-template">View Demo</a>
+    <a href="#usage">View Demo</a>
     ·
     <a href="https://github.com/bellanich/python-ml-template/issues">Report Bug</a>
     ·
@@ -132,8 +132,6 @@ Want to get started with ML development as soon as possible? Then just follow th
 
 Make sure you have the following dependencies installed:
 
-* [Node.js][link-download-npm] (also known as `node.js`, `node@21`, `nodejs`, and `npm`) for commit linting and other Javascript based pre-commit hooks
-
 * [Conda][link-download-conda] or [miniconda][link-download-miniconda] for Python package management
 
 * [Copier][link-download-copier] for dynamic Markdown file templating
@@ -166,11 +164,18 @@ Getting started is simple. Here are the step-by-step instructions:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-In a more prototypical Python ML project, this section would use  screenshots, code examples, and (possibly) demos to illustrate project use cases. However, in this case, this section simply serves as a reminder to demonstrate the practical application of your work. After all, the thrill of ML software development is only rivaled by your work in action.
+Curious how my Python ML Template works? This GIF showcases how you can get started right away with ML feature development by using this template's 3 simple setup commands:
 
-<!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<div align="center">
+<img src="images/demo.gif" alt="Demo">
+</div>
 
-_For more examples, please refer to the [Documentation](https://example.com)_ -->
+<br/>
+
+For more implementation details, please refer to the [project documentation](docs/0_overview.md).
+
+
+> **_NOTE:_** This section focus is illustrating a project's business value. Therefore, in a more prototypical ML project, you would also include things like screenshots, code examples, and figures.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,9 +187,9 @@ If you have a suggestion that would make this project better, please fork this r
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-1. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-2. Push to the Branch (`git push origin feature/AmazingFeature`)
-3. Open a Pull Request
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -228,6 +233,7 @@ Rather than re-inventing the wheel, I've leveraged the following great resources
 * [Collection of Git Attribute Templates](https://github.com/gitattributes/gitattributes) [by gitattributes](https://github.com/orgs/gitattributes/people)
 * [Shields.io Static Badge Builder](https://shields.io/badges/static-badge)
 * [Guide to making custom language badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)
+* [Terminalizer by Mohammad Anas Fares for terminal session recording](https://www.terminalizer.com)
 * [Simple Icons's library of open source project logos](https://simpleicons.org/)
 * [Python's Official Logging Cookbook by Vinay Sajip](https://docs.python.org/3/howto/logging-cookbook.html)
 * [Conventional Commit Regex by marcojahn](https://gist.github.com/marcojahn/482410b728c31b221b70ea6d2c433f0c)
@@ -275,7 +281,6 @@ Rather than re-inventing the wheel, I've leveraged the following great resources
 [pytest-website]: https://docs.pytest.org/en/7.4.x/contents.html
 [github-actions-badge-url]: https://img.shields.io/badge/-ReactJS%2520?style=for-the-badge&logo=githubactions&logoColor=%232088FF&label=GitHub%20Actions&labelColor=white&color=white
 [github-actions-website]: https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
-[link-download-npm]: https://nodejs.org/en/download
 [link-download-conda]: https://docs.conda.io/projects/conda/en/stable/user-guide/install/download.html
 [link-download-miniconda]: https://docs.conda.io/projects/miniconda/en/latest/
 [link-download-copier]: https://copier.readthedocs.io/en/stable/#installation
