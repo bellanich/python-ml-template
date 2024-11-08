@@ -1,7 +1,7 @@
 from src.utils import compute_meaning_of_life
 
 
-def test_hitchhikers_guide_prediction():
+def test_hitchhikers_guide_prediction(solution_explanation):
     # Given a question about the meaning of life, the universe, and everything,
     # our AI in the model confidently predicts:
     question_about_life = "What is the meaning of life, the universe, and everything?"
@@ -12,7 +12,4 @@ def test_hitchhikers_guide_prediction():
     # Expected whimsical outcome
     expected_outcome = "42"
 
-    assert model_prediction == expected_outcome, (
-        "In a delightful twist of computational wit, our AI predicted the answer "
-        "before you even asked! The meaning of life, the universe, and everything is 42!"
-    )
+    assert model_prediction == expected_outcome, solution_explanation
