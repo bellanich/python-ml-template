@@ -15,6 +15,7 @@ pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
 ruff = "^0.7.3"
 pre-commit = "^4.0.1"
+ipython = "^8.29.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -25,5 +26,7 @@ profile = "ruff"  # Ensure compatibility with ruff
 line_length = 120
 
 [tool.ruff]
-ignore = ["I001"]  # Ignore import sorting since `isort` handles it
 line-length = 120
+
+[tool.ruff.lint]
+ignore = ["E402", "W503"]
