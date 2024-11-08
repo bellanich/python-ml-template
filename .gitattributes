@@ -108,3 +108,4 @@
 # ----------------
 # Apply override to all files in the directory
 *.md linguist-detectable
+poetry.lock filter=lfs diff=lfs merge=lfs -text

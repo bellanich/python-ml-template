@@ -10,11 +10,12 @@ repos:
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-yaml
+        args: [--unsafe]
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: pretty-format-json
   # -------------------
-  #   Python-specific
+  #       Python
   # -------------------
   # Type checking
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -26,19 +27,57 @@ repos:
     rev: 5.13.2
     hooks:
       - id: isort
+        args: ["--profile=ruff"]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.3.5
     hooks:
       - id: ruff
-        args: [--fix]
+        args: [--fix, --ignore, "E402", --select, "I"]
       - id: ruff-format
-  - repo: https://github.com/myint/docformatter # Format Python doc strings
-    rev: v1.7.5
+        args: ["--ignore=I001"] # Allow isort to handle imports
+  # Security
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.6
     hooks:
-      - id: docformatter
-    args: [--in-place, --wrap-summaries=99, --wrap-descriptions=99]
+      - id: bandit
+        args: ["--exclude", "tests"]
+  # -------------------
+  #     Terraform
+  # -------------------
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.86.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+      - id: terraform_docs
+        args:
+          - "--args=--lockfile=false"
+      - id: terraform_tflint
+        args:
+          - "--args=--no-module"
+          - "--args=--only=terraform_comment_syntax"
+          - "--args=--only=terraform_deprecated_index"
+          - "--args=--only=terraform_deprecated_interpolation"
+          - "--args=--only=terraform_documented_outputs"
+          - "--args=--only=terraform_documented_variables"
+          - "--args=--only=terraform_module_pinned_source"
+          - "--args=--only=terraform_module_version"
+          - "--args=--only=terraform_naming_convention"
+          - "--args=--only=terraform_required_providers"
+          - "--args=--only=terraform_required_version"
+          - "--args=--only=terraform_typed_variables"
+          - "--args=--only=terraform_unused_declarations"
+          - "--args=--only=terraform_unused_required_providers"
+          - "--args=--only=terraform_workspace_remote"
   # ------------------
-  #   Other formatters
+  #       Bash
+  # ------------------
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.9.0.2
+    hooks:
+      - id: shellcheck
+  # ------------------
+  #       YAML
   # ------------------
   # Format YAML files
   - repo: https://github.com/pre-commit/mirrors-prettier
@@ -47,13 +86,8 @@ repos:
       - id: prettier
         types: [yaml]
         exclude: "environment.yaml"
-  # Format bash files
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.9.0.2
-    hooks:
-      - id: shellcheck
   # ------------------
-  #   Git-specific
+  #      Git
   # ------------------
   # Using this npm package: https://commitlint.js.org/#/
   # Adapted into pre-commit framework
@@ -64,11 +98,3 @@ repos:
         entry: ./config/commitlint.sh
         language: system
         pass_filenames: false
-  # -------------------
-  #      Security
-  # -------------------
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.6
-    hooks:
-      - id: bandit
-        args: ["--exclude", "tests"]
