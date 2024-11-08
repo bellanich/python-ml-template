@@ -89,8 +89,8 @@ repos:
   # ------------------
   #      Git
   # ------------------
-  # Using this npm package: https://commitlint.js.org/#/
-  # Adapted into pre-commit framework
+  # Use regex to enforce conventional commits
+  # See https://www.conventionalcommits.org/en/v1.0.0/
   - repo: local
     hooks:
       - id: commitlint
