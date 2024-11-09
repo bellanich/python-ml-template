@@ -39,7 +39,7 @@ While we used dynamic templating on markdown files, this **same approach can be 
 
 ## Conclusion
 
-In summary, there are many levels of templating used in this project. We template the file structure and markdown (documentation) files. In the next section, we'll go into further details about our "base" Conda environment definition.
+In summary, there are many levels of templating used in this project. We template the file structure and markdown (documentation) files. In the next section, we'll go into further details about our "base" Python virtual environment definition.
 
 <!-- End of page buttons -->
 ---
