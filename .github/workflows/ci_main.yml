@@ -34,7 +34,6 @@ jobs:
 
       - name: Install dependencies using Poetry
         run: |
-          poetry lock --no-update
           poetry install
 
       - name: Run tests status check
