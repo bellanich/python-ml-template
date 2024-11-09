@@ -31,7 +31,7 @@ See the documentation pages X, Y, and Z for more details.
 
 We use a Makefile to automate the tedious parts of project creation. In particular, we use [our Makefile file](../Makefile) to:
 
-1. Build our project's Conda Python environment
+1. Build our project's poetry Python environment
 2. Setup our [pre-commit hooks](https://pre-commit.com)
 3. Initialize our project on GitHub
 

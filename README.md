@@ -101,7 +101,7 @@ So, what exactly did I choose to include in my essential starter kit for a Pytho
 
 * A **simple continuous integration (CI) pipeline** that blocks any pull requests (PRs) with failing Python tests
 * **Dynamic template generation** to encourage a "document as you go" approach rather than hastily throwing everything together
-* A **base Python environment definition** so that I'm not consistently reinstalling my favorite Python packages (e.g., `black`) over and over
+* A **base Python environment definition** so that I'm not consistently reinstalling my favorite Python packages (e.g., `ruff`) over and over
 * Git and GitHub-focused **templates to make version control** and peer-to-peer collaboration as **streamlined** as possible
 
 For a deeper dive of what's included in this project and why, please refer to [the project documentation](https://github.com/bellanich/python-ml-template/tree/main/docs).
@@ -116,7 +116,7 @@ This project leverages the power of the following frameworks and libraries. Refe
 
 * [![Static Badge][copier-badge-url]][copier-website]
 * [![Static Badge][pre-commit-badge-url]][pre-commit-website]
-* [![Static Badge][conda-badge-url]][conda-website]
+* [![Static Badge][poetry-badge-url]][poetry-website]
 * [![Static Badge][pytest-badge-url]][pytest-website]
 * [![Static Badge][github-actions-badge-url]][github-actions-website]
 * [![Static Badge][github-cli-badge-url]][github-cli-website]
@@ -132,7 +132,7 @@ Want to get started with ML development as soon as possible? Then just follow th
 
 Make sure you have the following dependencies installed:
 
-* [Conda][link-download-conda] or [miniconda][link-download-miniconda] for Python package management
+* [Poetry][poetry-download-link] for Python package management
 
 * [Copier][link-download-copier] for dynamic Markdown file templating
 
@@ -150,12 +150,7 @@ Getting started is simple. Here are the step-by-step instructions:
    cd your-new-project/
    make
    ```
-5. Activate your conda environment and you're ready to go
-    ```bash
-    # By default, your conda env will have the same name as your project
-    CONDA_ENV_NAME=$(basename "$(pwd)")
-    conda activate $CONDA_ENV_NAME
-    ```
+5. Activate your poetry virtual environment (`poetry shell`) and you're ready to go
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -281,11 +276,10 @@ Rather than re-inventing the wheel, I've leveraged the following great resources
 [pytest-website]: https://docs.pytest.org/en/7.4.x/contents.html
 [github-actions-badge-url]: https://img.shields.io/badge/-ReactJS%2520?style=for-the-badge&logo=githubactions&logoColor=%232088FF&label=GitHub%20Actions&labelColor=white&color=white
 [github-actions-website]: https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
-[link-download-conda]: https://docs.conda.io/projects/conda/en/stable/user-guide/install/download.html
-[link-download-miniconda]: https://docs.conda.io/projects/miniconda/en/latest/
 [link-download-copier]: https://copier.readthedocs.io/en/stable/#installation
-[conda-badge-url]: https://img.shields.io/badge/-React%2520?style=for-the-badge&logo=anaconda&logoColor=%2344A833&label=Anaconda&labelColor=white&color=white
-[conda-website]: https://docs.conda.io/en/latest/#
 [github-cli-badge-url]: https://img.shields.io/badge/-React%2520Router?style=for-the-badge&logo=github&logoColor=white&label=GitHub%20CLI&labelColor=black&color=black
 [github-cli-website]: https://cli.github.com
 [link-download-github-cli]: https://cli.github.com/manual/
+[poetry-badge-url]: https://img.shields.io/badge/-React%252520%3F?style=for-the-badge&logo=poetry&logoColor=%2360A5FA&label=Poetry&labelColor=%2310142c&color=%2310142c
+[poetry-website]: https://python-poetry.org
+[poetry-download-link]: https://python-poetry.org/docs/#installation

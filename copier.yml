@@ -6,10 +6,15 @@ project_name:
   help: Project name
   default: Python ML Template
 
+project_slug:
+  type: str
+  help: Project slug (used for naming folders and files)
+  default: "{{ project_name.lower().replace(' ', '-') }}"
+
 github_repo_url:
   type: str
   help: Where should your project be hosted on GitHub? (URL)
-  default: https://github.com/bellanich/python-ml-template
+  default: "https://github.com/bellanich/{{ project_slug }}"
 
 # -----------------
 #  Contact details

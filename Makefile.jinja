@@ -2,22 +2,18 @@
 DIR_NAME := $(shell basename "$(PWD)")
 
 # Define the targets
-all: build_conda build_hooks clean gh_repo_setup
+all: build_poetry build_hooks clean gh_repo_setup
 .PHONY: all
 
-# Infer conda name from directory (project) name
-# Overwrite loose project dependencies with pinned ones
-build_conda:
-	@echo "Building your '${DIR_NAME}' project..."
-	@if conda env list | grep -q "^${DIR_NAME}"; then \
-		echo "'${DIR_NAME}' conda environment already exists...skipping..."; \
+# Infer poetry env name from directory (project) name
+build_poetry:
+	@echo "Building your '${DIR_NAME}' project with Poetry..."
+	@if poetry env list | grep -q "${DIR_NAME}"; then \
+		echo "'${DIR_NAME}' Poetry environment already exists...skipping..."; \
     else \
-		conda config --set channel_priority strict; \
-        sed "s/name:.*/name: ${DIR_NAME}/" environment.yml > environment_tmp.yml; \
-		mv environment_tmp.yml environment.yml; \
-		conda env create -f environment.yml; \
-		conda env export --no-builds > environment.yml; \
-		echo "Built '${DIR_NAME}' conda environment"; \
+		poetry config virtualenvs.in-project true; \
+		poetry install --no-root; \
+		echo "Built '${DIR_NAME}' Poetry environment"; \
     fi
 
 # Using pre-commit framework: https://pre-commit.com/index.html
@@ -25,32 +21,25 @@ build_conda:
 build_hooks:
 	@echo ""
 	@echo "Setting up pre-commit hooks..."
-	source ~/.zshrc && \
-	conda activate ${DIR_NAME} && \
-	CONDA_ENV_NAME=$$(which python | awk -F/ '{print $$(NF-2)}') && \
-	if [ "$${CONDA_ENV_NAME}" = "${DIR_NAME}" ]; then \
-		echo "✓ Check passed: Correct conda env is in use"; \
-	else \
-		echo "Wrong conda env is in use...exiting..." && \
-		exit 1; \
-	fi && \
 	if [ ! -d ".git" ]; then \
-		echo "...initializing Git..."; \
-		git init; \
-		git add .; \
-	 	git commit -m "Initial commit"; \
-	fi && \
-	conda install pre-commit && \
-	pre-commit install && .git/hooks/pre-commit && \
-	chmod +x config/commitlint.sh
+        echo "...initializing Git..."; \
+        git init; \
+        git add .; \
+        git commit -m "Initial commit"; \
+    fi && \
+	poetry run pre-commit install
+	@echo "Pre-commit hooks installed successfully."
 
 # Target to clean up generated files
 clean:
-	@echo "Cleaning up..."
+	@echo "Cleaning up temporary files..."
+	@rm -rf __pycache__ .pytest_cache .tox .coverage .mypy_cache .nox .coverage
+	poetry run pre-commit clean
 	@files_to_remove=$$(find docs -type f | grep -v '0_overview.md'); \
 	for file in $$files_to_remove; do \
 		rm -f $$file; \
     done
+	@echo "Cleanup complete."
 
 # Use the GitHub ClI to automatically push this project to the remote server
 # Initialize GitHub repository as private

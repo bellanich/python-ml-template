@@ -11,8 +11,7 @@ def initialize_logs(log_filepath: str, reset_logs: bool) -> None:
         log_filepath (str): filepath of log file
         reset_logs (bool): Do you want to reset (delete) old log file?
     """
-    log_dirname = os.path.dirname(log_filepath)
-    if log_dirname:
+    if log_dirname := os.path.dirname(log_filepath):
         os.makedirs(log_dirname, exist_ok=True)
     if os.path.exists(log_filepath) and reset_logs:
         os.remove(log_filepath)

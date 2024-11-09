@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "python-ml-template"
+version = "0.1.0"
+description = ""
+authors = ["Bella Nicholson <bellanich.software@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+copier = "^9.4.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-cov = "^6.0.0"
+ruff = "^0.7.3"
+pre-commit = "^4.0.1"
+ipython = "^8.29.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+line_length = 120
+
+[tool.ruff]
+line-length = 120

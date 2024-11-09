@@ -1,47 +1,28 @@
 # 3. Python Virtual Environment Template
 
-There are some Python packages that we always find ourselves downloading. In order to speed up our project setup, we've created [a "base" Conda environment definition](../environment.yml).
+There are some Python packages that we always find ourselves downloading. In order to speed up our project setup, we've created [a "base" Python virtual environment  definition](../pyproject.toml).
 
 ## Contents
 - [3. Python Virtual Environment Template](#3-python-virtual-environment-template)
   - [Contents](#contents)
-  - [3.1 Why use Conda?](#31-why-use-conda)
-  - [3.2 Loose vs. Pinned Dependencies](#32-loose-vs-pinned-dependencies)
-  - [3.3 Updating Base Environment Definition](#33-updating-base-environment-definition)
+  - [3.1 Why use Poetry?](#31-why-use-poetry)
   - [Conclusion](#conclusion)
 
 
-## 3.1 Why use Conda?
+## 3.1 Why use Poetry?
 
-In the initial development of a ML project, rapid product iteration is critical for validating a business idea. Hence, we've selected [Conda](https://docs.conda.io/en/latest/) as our Python package management of choice due to its ease of use.
+[Poetry](https://python-poetry.org) manages Python dependencies,code packaging, and virtual environments in a single solution. With its user-friendly commandline interface, Poetry offers the following benefits:
 
-As project system grows in complexity, we advise switching to a more granular dependency management system (like [Poetry](https://python-poetry.org)) to better manage different types of dependencies and for more comprehensive [dependency locking](https://docs.gradle.org/current/userguide/dependency_locking.html).
+* Follows modern Python packaging standards by fully supporting `pyproject.toml`
+* Reproducible dependency resolution with its version locking (via `poetry.lock`)
+* Automated virtual environment creation
+* Seamless integration with popular CI platforms (e.g., GitHub Actions) and containerization tools (e.g., Docker)
 
-## 3.2 Loose vs. Pinned Dependencies
-
-In our base [`environment.yml` file][src-environment.yml], we have maintained flexibility in our Python dependencies. This guarantees that Conda can install the most up-to-date package versions when initializing a project, preventing our core dependencies from becoming deprecated over time.
-
-However, it is crucial for Python dependencies to be reproducible. In other words, the project built from our template needs to have pinned Python dependencies. To achieve this, we automatically recreate a environment.yml file with pinned dependencies in our [Makefile][src-code-Makefile] using this command:
-
-```bash
-conda env export --no-builds > environment.yml
-```
-
-## 3.3 Updating Base Environment Definition
-
-If you want to modify the dependencies of your base Python environment, then just follow these steps:
-
-1. Activate your base conda environment (`conda activate python-ml-template `)
-2. [Add (or remove) the loose dependencies using conda](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
-3. Rebuild your conda environment definition file **in this Python ML template project repository**
-
-    ```bash
-    conda env update -f environment.yml --prune
-    ```
+In summary, we’ve selected Poetry for its versatility, ease of use, and compatibility with other popular ML/software tools.
 
 ## Conclusion
 
-In the past, we have found ourselves consistently re-installing Python packages like `isort` or `pytest` to our project's Python environment. To expedite this process, we've created a base Conda environment definition. Our Makefile automates the process of converting this list of project dependencies into a fully-functional and ready-to-go Python environment. As a result, we can spend less on project setup and more time on ML feature development.
+In the past, we have found ourselves consistently re-installing Python packages like `isort` or `pytest` for each new project. To expedite this process, we've defined our base Python packages in the [`pyproject.toml.jinja template` file](../pyproject.toml.jinja). Our Makefile then automates the Poetry virtual environment setup. Thus, we can spend less time on project setup and more time on ML feature development.
 
 <!-- End of page buttons -->
 ---
