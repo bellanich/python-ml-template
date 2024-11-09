@@ -34,6 +34,7 @@ build_hooks:
 clean:
 	@echo "Cleaning up temporary files..."
 	@rm -rf __pycache__ .pytest_cache .tox .coverage .mypy_cache .nox .coverage
+	@rm images/demo.yml images/demo.gif
 	poetry run pre-commit clean
 	@files_to_remove=$$(find docs -type f | grep -v '0_overview.md'); \
 	for file in $$files_to_remove; do \
