@@ -111,7 +111,7 @@ config:
 # Records, feel free to edit them
 records:
   - delay: 549
-    content: "\r\nThe default interactive shell is now zsh.\r\nTo update your account to use zsh, please run `chsh -s /bin/zsh`.\r\nFor more details, please visit https://support.apple.com/kb/HT208050.\r\n\e[?1034hBellas-MacBook-Air:Projects bellanicholson$ "
+    content: "\r\n\e[?1034hBellas-MacBook-Air:Projects bellanicholson$ "
   - delay: 1770
     content: c
   - delay: 560
@@ -212,10 +212,6 @@ records:
     content: t
   - delay: 333
     content: "\r\n"
-  - delay: 963
-    content: "/Users/bellanicholson/anaconda3/lib/python3.10/site-packages/copier/vcs.py:209: DirtyLocalWarning: Dirty template changes included automatically.\r\n  warn(\r\n"
-  - delay: 420
-    content: "\e[31mNo git tags found in template; using HEAD as ref\e[39m\r\n"
   - delay: 284
     content: "\e[6n\e[?2004h\e[?1l\e[?1000h\e[?1003h\e[?1015h\e[?1006h\e[?25l\e[0m\e[?7l\e[0m\e[J\e[0;38;5;67m\U0001F3A4\e[0;1m Project name\e[0m\r\r\n\e[0;1m   \e[0;38;5;214;1mPython ML Template\e[21D\e[21C\e[?7h\e[0m\e[?12l\e[?25h\e[?25l\e[?7l\e[21D\e[0;1m   \e[0;38;5;214;1mPython ML Template\e[0m\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\e[0m \b\e[30A\e[21C\e[?7h\e[0m\e[?12l\e[?25h"
   - delay: 556
