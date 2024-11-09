@@ -27,6 +27,7 @@ repos:
     rev: 5.13.2
     hooks:
       - id: isort
+        additional_dependencies: [setuptools]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.3.5
     hooks:

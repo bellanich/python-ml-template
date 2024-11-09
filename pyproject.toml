@@ -10,7 +10,6 @@ readme = "README.md"
 python = "^3.10"
 copier = "^9.4.1"
 
-
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
@@ -23,11 +22,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
-profile = "ruff"  # Ensure compatibility with ruff
 line_length = 120
 
 [tool.ruff]
 line-length = 120
-
-[tool.ruff.lint]
-ignore = ["E402", "W503"]

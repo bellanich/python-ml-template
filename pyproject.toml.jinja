@@ -2,14 +2,13 @@
 name = "{{ project_slug }}"
 version = "0.1.0"
 description = ""
-authors = ["Bella Nicholson <bellanich.software@gmail.com>"]
+authors = ["{{ author }} <{{ email }}>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 copier = "^9.4.1"
-
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
@@ -23,11 +22,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
-profile = "ruff"  # Ensure compatibility with ruff
 line_length = 120
 
 [tool.ruff]
 line-length = 120
-
-[tool.ruff.lint]
-ignore = ["E402", "W503"]
