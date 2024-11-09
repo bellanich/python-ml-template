@@ -14,24 +14,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set env vars
+        run: |
+          echo "BRANCH_NAME=$(echo "$GITHUB_REF" | sed 's|^refs/heads/||')" >> $GITHUB_ENV
 
-    - name: Set env vars
-      run: |
-        echo "CONDA_BASE=$(conda info --base)" >> $GITHUB_ENV
-        echo "BRANCH_NAME=$(echo "$GITHUB_REF" | sed 's|^refs/heads/||')" >> $GITHUB_ENV
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: "${{ env.BRANCH_NAME }}"
 
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        ref: "${{ env.BRANCH_NAME }}"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10" # Define preferred Python version
 
-    - name: Set up Conda
-      uses: conda-incubator/setup-miniconda@v3
-      with:
-        environment-file: environment.yml
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
 
-    - name: Run tests status check
-      run: |
-        source $CONDA_BASE/etc/profile.d/conda.sh
-        conda activate test
-        pytest tests
+      - name: Install dependencies using Poetry
+        run: |
+          poetry install
+
+      - name: Run tests status check
+        run: |
+          poetry run pytest tests
